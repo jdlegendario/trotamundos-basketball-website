@@ -43,9 +43,18 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <button className="btn-primary" aria-label="Inscribirse en Trotamundos Básquet">
-              Inscríbete Ahora
-            </button>
+            <div className="flex items-center space-x-3">
+              <Link
+                href="/admin"
+                className="px-4 py-2 text-primary-600 border border-primary-600 rounded-lg hover:bg-primary-600 hover:text-white transition-colors font-medium"
+                aria-label="Ingresar al panel de administración"
+              >
+                Ingresar
+              </Link>
+              <button className="btn-primary" aria-label="Inscribirse en Trotamundos Básquet">
+                Inscríbete Ahora
+              </button>
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -77,9 +86,18 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
-              <button className="btn-primary mt-4 w-full">
-                Inscríbete Ahora
-              </button>
+              <div className="flex flex-col space-y-2 mt-4">
+                <Link
+                  href="/admin"
+                  className="px-4 py-2 text-center text-primary-600 border border-primary-600 rounded-lg hover:bg-primary-600 hover:text-white transition-colors font-medium"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Ingresar
+                </Link>
+                <button className="btn-primary w-full">
+                  Inscríbete Ahora
+                </button>
+              </div>
             </div>
           </div>
         )}

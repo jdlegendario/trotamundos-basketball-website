@@ -76,6 +76,7 @@ const Footer = () => {
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">Política de Privacidad</a>
               <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">Términos de Uso</a>
+              <a href="/admin" className="text-gray-600 hover:text-primary-400 transition-colors">⚙️</a>
             </div>
           </div>
         </div>
