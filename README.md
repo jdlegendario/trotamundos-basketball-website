@@ -157,7 +157,7 @@ npm run lint     # Ejecutar linter
 - 📧 Email: info@trotamundosbasquet.com
 - 🌐 Web: https://trotamundosbasquet.com/
 - 📘 Facebook: [Trotamundos Ec](https://www.facebook.com/people/Trotamundos-Ec/pfbid031THEBHTxB6htu7mnkaPGexG1AXkZVyw9L5GznYDksAtTkmTECNPTovPPDKhvuRx2l/)
-- 🐦 Twitter: [@TrotamundosEC](https://twitter.com/TrotamundosEC)
+- � Telegram: [Únete al grupo](https://t.me/+pjK0UzNs-Kw3YTVh)
 - 📷 Instagram: [@trotamundos.ec](https://www.instagram.com/trotamundos.ec?igsh=Yno0aTY0YmI3eGVl)
 
 ## 📄 Licencia

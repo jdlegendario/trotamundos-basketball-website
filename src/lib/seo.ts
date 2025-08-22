@@ -23,7 +23,7 @@ export const seoConfig = {
   social: {
     facebook: 'https://www.facebook.com/trotamundos',
     instagram: 'https://www.instagram.com/trotamundos',
-    twitter: 'https://twitter.com/trotamundos'
+    telegram: 'https://t.me/+pjK0UzNs-Kw3YTVh'
   }
 }
 
