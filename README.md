@@ -66,7 +66,7 @@ Sitio web moderno y optimizado para SEO de Trotamundos, escuela de básquet jove
 1. **Clonar el repositorio**
    ```bash
    git clone [url-del-repositorio]
-   cd fundacion-caballito
+   cd trotamundos-basketball-website
    ```
 
 2. **Instalar dependencias**
@@ -152,17 +152,17 @@ npm run lint     # Ejecutar linter
 
 ## 🤝 Contacto
 
-**Fundación Caballito Zeballos**
-- 📱 Teléfono: 097 972 2094
-- 📧 Email: yosoycaballitozeballos@gmail.com
-- 🌐 Web: https://yosoycaballito.com/
-- 📘 Facebook: [@caballitozeballosm](https://www.facebook.com/caballitozeballosm)
-- 🐦 Twitter: [@Fund_Caballito](https://twitter.com/Fund_Caballito)
-- 📷 Instagram: [@yosoycaballito](https://www.instagram.com/yosoycaballito/)
+**Trotamundos Basketball Club**
+- 📱 Teléfono: 096 315 8138
+- 📧 Email: info@trotamundosbasquet.com
+- 🌐 Web: https://trotamundosbasquet.com/
+- 📘 Facebook: [Trotamundos Ec](https://www.facebook.com/people/Trotamundos-Ec/pfbid031THEBHTxB6htu7mnkaPGexG1AXkZVyw9L5GznYDksAtTkmTECNPTovPPDKhvuRx2l/)
+- 🐦 Twitter: [@TrotamundosEC](https://twitter.com/TrotamundosEC)
+- 📷 Instagram: [@trotamundos.ec](https://www.instagram.com/trotamundos.ec?igsh=Yno0aTY0YmI3eGVl)
 
 ## 📄 Licencia
 
-© 2025 Fundación Caballito Zeballos. Todos los derechos reservados.
+© 2025 Trotamundos Basketball Club. Todos los derechos reservados.
 
 ---
 

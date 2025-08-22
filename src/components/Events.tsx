@@ -2,32 +2,32 @@ const Events = () => {
   const eventos = [
     {
       id: 1,
-      titulo: 'Torneo Regional Juvenil',
-      fecha: '31 Sep 2025',
+      titulo: 'Copa Aventureros 2025',
+      fecha: '30 Sep 2025',
       hora: '15:00',
-      ubicacion: 'Coliseo Municipal',
-      equipos: 'Trotamundos vs Águilas del Norte',
-      entradas: 'Entrada libre',
-      precio: 'Gratis'
+      ubicacion: 'Coliseo Nacional de Quito',
+      equipos: 'Conquistadores vs Titanes del Sur',
+      entradas: 'Entradas disponibles',
+      precio: '$5'
     },
     {
       id: 2,
-      titulo: 'Partido Amistoso',
+      titulo: 'Festival de Trotamundos',
       fecha: '15 Sep 2025',
       hora: '16:00',
-      ubicacion: 'Cancha Local',
-      equipos: 'Trotamundos vs Lobos Marinos',
-      entradas: 'Abierto al público',
+      ubicacion: 'Academia Trotamundos',
+      equipos: 'Exploradores vs Aventureros',
+      entradas: 'Evento familiar abierto',
       precio: 'Gratis'
     },
     {
       id: 3,
-      titulo: 'Campamento de Verano 2025',
+      titulo: 'Campamento de Exploradores 2025',
       fecha: '1 Dic 2025',
       hora: '08:00',
-      ubicacion: 'Instalaciones Trotamundos',
+      ubicacion: 'Centro Trotamundos',
       equipos: 'Todas las categorías',
-      entradas: 'Inscripciones abiertas',
+      entradas: 'Cupos limitados',
       precio: '$50'
     }
   ]
@@ -36,31 +36,41 @@ const Events = () => {
     <section id="eventos" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fade-in-up">
             Próximos Eventos
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-600 animate-fade-in-up stagger-1">
             No te pierdas nuestros próximos partidos y actividades
           </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {eventos.map((evento, index) => (
-            <div key={evento.id} className={`card ${index === 0 ? 'lg:col-span-2' : ''}`}>
+            <div 
+              key={evento.id} 
+              className={`card hover-lift transition-all duration-500 animate-fade-in-up ${index === 0 ? 'lg:col-span-2' : ''}`}
+              style={{ animationDelay: `${index * 0.2}s` }}
+            >
               <div className="p-8">
                 <div className="flex items-start justify-between mb-6">
-                  <div>
-                    <div className="flex items-center text-sm text-gray-500 mb-2">
-                      <span className="mr-4">📅 {evento.fecha}</span>
-                      <span>🕐 {evento.hora}</span>
+                  <div className="flex-1">
+                    <div className="flex items-center text-sm text-gray-500 mb-2 space-x-4">
+                      <span className="flex items-center transition-colors duration-300 hover:text-primary-600">
+                        <span className="mr-1">📅</span> {evento.fecha}
+                      </span>
+                      <span className="flex items-center transition-colors duration-300 hover:text-primary-600">
+                        <span className="mr-1">🕐</span> {evento.hora}
+                      </span>
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-800 mb-2">
+                    <h3 className="text-2xl font-bold text-gray-800 mb-2 transition-colors duration-300 hover:text-primary-600">
                       {evento.titulo}
                     </h3>
-                    <p className="text-gray-600 mb-4">📍 {evento.ubicacion}</p>
+                    <p className="text-gray-600 mb-4 flex items-center transition-colors duration-300 hover:text-gray-700">
+                      <span className="mr-1">📍</span> {evento.ubicacion}
+                    </p>
                   </div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold text-primary-600 mb-1">
+                  <div className="text-right ml-4">
+                    <div className="text-2xl font-bold text-primary-600 mb-1 animate-pulse-subtle">
                       {evento.precio}
                     </div>
                     <div className="text-sm text-gray-500">por entrada</div>
@@ -86,43 +96,43 @@ const Events = () => {
         </div>
 
         {/* Próximos partidos rápidos */}
-        <div className="mt-16 bg-white rounded-2xl p-8 shadow-lg">
+        <div className="mt-16 bg-white rounded-2xl p-8 shadow-lg hover-lift transition-all duration-500 animate-fade-in-up stagger-4">
           <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">
             Resultados Recientes
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center border-r border-gray-200 last:border-r-0 pr-6 last:pr-0">
-              <div className="text-sm text-gray-500 mb-2">14 Abril 2024</div>
+            <div className="text-center border-r border-gray-200 last:border-r-0 pr-6 last:pr-0 group">
+              <div className="text-sm text-gray-500 mb-2 transition-colors duration-300 group-hover:text-primary-600">14 Abril 2024</div>
               <div className="flex items-center justify-center space-x-2 mb-2">
-                <span className="font-semibold">Athletic NY</span>
-                <span className="text-2xl font-bold text-green-600">105</span>
+                <span className="font-semibold transition-colors duration-300 group-hover:text-primary-600">Athletic NY</span>
+                <span className="text-2xl font-bold text-green-600 transition-transform duration-300 group-hover:scale-110">105</span>
                 <span className="text-gray-400">-</span>
                 <span className="text-2xl font-bold text-gray-400">99</span>
                 <span className="font-semibold">Dragons Boston</span>
               </div>
-              <div className="text-xs text-green-600 font-medium">Victoria Local</div>
+              <div className="text-xs text-green-600 font-medium transition-all duration-300 group-hover:text-green-700">Victoria Local</div>
             </div>
-            <div className="text-center border-r border-gray-200 last:border-r-0 pr-6 last:pr-0">
-              <div className="text-sm text-gray-500 mb-2">14 Abril 2024</div>
+            <div className="text-center border-r border-gray-200 last:border-r-0 pr-6 last:pr-0 group">
+              <div className="text-sm text-gray-500 mb-2 transition-colors duration-300 group-hover:text-primary-600">14 Abril 2024</div>
               <div className="flex items-center justify-center space-x-2 mb-2">
                 <span className="font-semibold">Dragons Boston</span>
                 <span className="text-2xl font-bold text-gray-400">105</span>
                 <span className="text-gray-400">-</span>
-                <span className="text-2xl font-bold text-green-600">123</span>
-                <span className="font-semibold">Rockets Houston</span>
+                <span className="text-2xl font-bold text-green-600 transition-transform duration-300 group-hover:scale-110">123</span>
+                <span className="font-semibold transition-colors duration-300 group-hover:text-primary-600">Rockets Houston</span>
               </div>
-              <div className="text-xs text-green-600 font-medium">Victoria Visitante</div>
+              <div className="text-xs text-green-600 font-medium transition-all duration-300 group-hover:text-green-700">Victoria Visitante</div>
             </div>
-            <div className="text-center pr-6 last:pr-0">
-              <div className="text-sm text-gray-500 mb-2">14 Abril 2024</div>
+            <div className="text-center pr-6 last:pr-0 group">
+              <div className="text-sm text-gray-500 mb-2 transition-colors duration-300 group-hover:text-primary-600">14 Abril 2024</div>
               <div className="flex items-center justify-center space-x-2 mb-2">
-                <span className="font-semibold">Bulls Chicago</span>
-                <span className="text-2xl font-bold text-green-600">105</span>
+                <span className="font-semibold transition-colors duration-300 group-hover:text-primary-600">Bulls Chicago</span>
+                <span className="text-2xl font-bold text-green-600 transition-transform duration-300 group-hover:scale-110">105</span>
                 <span className="text-gray-400">-</span>
                 <span className="text-2xl font-bold text-gray-400">29</span>
                 <span className="font-semibold">Dragons Boston</span>
               </div>
-              <div className="text-xs text-green-600 font-medium">Victoria Local</div>
+              <div className="text-xs text-green-600 font-medium transition-all duration-300 group-hover:text-green-700">Victoria Local</div>
             </div>
           </div>
         </div>

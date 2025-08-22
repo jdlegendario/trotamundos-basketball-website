@@ -11,6 +11,9 @@ module.exports = {
         primary: {
           50: '#eff6ff',
           100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
           500: '#3b82f6',
           600: '#2563eb',
           700: '#1d4ed8',
@@ -20,6 +23,9 @@ module.exports = {
         secondary: {
           50: '#f0f9ff',
           100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
           500: '#0ea5e9',
           600: '#0284c7',
           700: '#0369a1',
@@ -31,6 +37,45 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+      animation: {
+        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+        'fade-in-left': 'fadeInLeft 0.8s ease-out forwards',
+        'fade-in-right': 'fadeInRight 0.8s ease-out forwards',
+        'bounce-subtle': 'bounce 2s infinite',
+        'pulse-subtle': 'pulse 3s ease-in-out infinite',
+      },
+      keyframes: {
+        fadeInUp: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(30px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
+        fadeInLeft: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateX(-30px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateX(0)',
+          },
+        },
+        fadeInRight: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateX(30px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateX(0)',
+          },
+        },
       },
     },
   },

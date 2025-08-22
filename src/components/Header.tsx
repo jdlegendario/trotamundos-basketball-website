@@ -17,36 +17,38 @@ const Header = () => {
   ]
 
   return (
-    <header className="fixed top-0 w-full bg-white shadow-lg z-50" role="banner">
+    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-lg z-50 transition-all duration-300" role="banner">
       <nav className="container mx-auto px-4" role="navigation" aria-label="Navegación principal">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 basketball-gradient rounded-full flex items-center justify-center" aria-hidden="true">
+          <div className="flex items-center space-x-3 animate-fade-in-left">
+            <div className="w-10 h-10 basketball-gradient rounded-full flex items-center justify-center hover-scale" aria-hidden="true">
               <span className="text-white font-bold text-xl">🏀</span>
             </div>
             <div>
               <h1 className="text-xl font-bold text-gray-800">Trotamundos</h1>
-              <h2 className="text-sm text-primary-600 font-semibold">BÁSQUET</h2>
+              <h2 className="text-sm text-primary-600 font-semibold">BASKETBALL CLUB</h2>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
+          <div className="hidden md:flex items-center space-x-8 animate-fade-in-right">
+            {navItems.map((item, index) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-primary-600 font-medium transition-colors"
+                className="text-gray-700 hover:text-primary-600 font-medium transition-all duration-300 relative group"
+                style={{ animationDelay: `${index * 0.1}s` }}
                 aria-label={`Ir a sección ${item.name}`}
               >
                 {item.name}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
             <div className="flex items-center space-x-3">
               <Link
                 href="/admin"
-                className="px-4 py-2 text-primary-600 border border-primary-600 rounded-lg hover:bg-primary-600 hover:text-white transition-colors font-medium"
+                className="px-4 py-2 text-primary-600 border border-primary-600 rounded-lg hover:bg-primary-600 hover:text-white transition-all duration-300 font-medium hover-lift"
                 aria-label="Ingresar al panel de administración"
               >
                 Ingresar
