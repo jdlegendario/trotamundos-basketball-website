@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -12,6 +13,7 @@ const Header = () => {
     { name: 'Noticias', href: '#noticias' },
     { name: 'Eventos', href: '#eventos' },
     { name: 'Equipos', href: '#equipos' },
+    { name: 'Patrocinadores', href: '#patrocinadores' },
     { name: 'Galería', href: '#galeria' },
     { name: 'Contacto', href: '#contacto' },
   ]
@@ -22,8 +24,14 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3 animate-fade-in-left">
-            <div className="w-10 h-10 basketball-gradient rounded-full flex items-center justify-center hover-scale" aria-hidden="true">
-              <span className="text-white font-bold text-xl">🏀</span>
+            <div className="w-10 h-10 relative hover-scale overflow-hidden rounded-full" aria-hidden="true">
+              <Image
+                src="/icon.png"
+                alt="Trotamundos Logo"
+                fill
+                className="object-cover"
+                sizes="40px"
+              />
             </div>
             <div>
               <h1 className="text-xl font-bold text-gray-800">Trotamundos</h1>

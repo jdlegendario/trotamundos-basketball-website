@@ -4,6 +4,7 @@ import About from '@/components/About'
 import News from '@/components/News'
 import Events from '@/components/Events'
 import Teams from '@/components/Teams'
+import Sponsors from '@/components/Sponsors'
 import Gallery from '@/components/Gallery'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
@@ -26,6 +27,7 @@ export default function Home() {
         <News />
         <Events />
         <Teams />
+        <Sponsors />
         <Gallery />
         <Contact />
         <Footer />

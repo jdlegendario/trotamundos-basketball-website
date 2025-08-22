@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   creator: 'Trotamundos Básquet',
   publisher: 'Trotamundos Básquet',
   robots: 'index, follow',
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/favicon.ico',
+    apple: '/icon.png',
+  },
   openGraph: {
     title: 'Trotamundos - Escuela de Básquet en Ecuador',
     description: 'Escuela de básquet joven y en crecimiento con 40+ estudiantes activos y entrenamientos profesionales en Ecuador.',
