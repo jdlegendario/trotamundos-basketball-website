@@ -1,5 +1,8 @@
 'use client'
 
+import Card3D from './Card3D';
+import ProgressBar from './ProgressBar';
+
 const News = () => {
   const noticias = [
     {

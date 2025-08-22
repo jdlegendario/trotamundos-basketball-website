@@ -35,10 +35,10 @@ body {
   background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
 }
 
-.hero-section {
+/* .hero-section {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
               url('/basketball-court.jpg') center/cover;
-}
+} */
 
 /* Animaciones personalizadas estilo Apple */
 @keyframes fadeInUp {
@@ -374,4 +374,340 @@ body {
     @apply bg-white rounded-xl shadow-lg overflow-hidden 
            transition-all duration-300 hover:shadow-2xl;
   }
+}
+
+/* === NUEVAS ANIMACIONES AVANZADAS APPLE STYLE === */
+
+/* === ADVANCED GLASS MORPHISM === */
+.glass-advanced {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-advanced::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.6s;
+}
+
+.glass-advanced:hover::before {
+  left: 100%;
+}
+
+/* === 3D CARD TRANSFORMS === */
+.card-3d-container {
+  perspective: 1000px;
+  perspective-origin: center center;
+}
+
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease-out;
+  will-change: transform;
+}
+
+.card-3d-hover {
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card-3d-hover:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* === COUNTER ANIMATIONS === */
+.counter-animation {
+  font-variant-numeric: tabular-nums;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: inline-block;
+}
+
+/* === PARALLAX ELEMENTS === */
+.parallax-container {
+  overflow-x: hidden;
+  position: relative;
+}
+
+.parallax-element {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.parallax-slow {
+  transform: translateY(calc(var(--scroll) * 0.5px));
+}
+
+.parallax-fast {
+  transform: translateY(calc(var(--scroll) * 1.2px));
+}
+
+.parallax-reverse {
+  transform: translateY(calc(var(--scroll) * -0.3px));
+}
+
+/* === PROGRESS BAR ANIMATIONS === */
+.progress-container {
+  position: relative;
+}
+
+.progress-track {
+  position: relative;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.progress-fill {
+  position: relative;
+  will-change: width;
+  transform: translateZ(0);
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  animation: progressShine 2s ease-in-out;
+}
+
+@keyframes progressShine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* === MICRO ANIMATIONS PREMIUM === */
+.btn-apple-advanced {
+  background: linear-gradient(135deg, #007AFF, #0056b3);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateZ(0);
+  cursor: pointer;
+}
+
+.btn-apple-advanced::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.btn-apple-advanced:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 10px 25px rgba(0, 122, 255, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.btn-apple-advanced:hover::before {
+  left: 100%;
+}
+
+.btn-apple-advanced:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* === GRADIENT TEXT ANIMATION === */
+.gradient-text {
+  background: linear-gradient(
+    45deg,
+    #007AFF,
+    #00C896,
+    #FF6B6B,
+    #4ECDC4,
+    #45B7D1
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 4s ease infinite;
+}
+
+/* Título con gradiente vibrante que resalta */
+.title-vibrant-gradient {
+  background: linear-gradient(135deg, 
+    rgba(59, 130, 246, 0.8),   /* Azul vibrante */
+    rgba(147, 51, 234, 0.8),   /* Púrpura */
+    rgba(239, 68, 68, 0.6)     /* Rojo sutil */
+  );
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(59, 130, 246, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.title-vibrant-gradient:hover {
+  background: linear-gradient(135deg, 
+    rgba(59, 130, 246, 0.9),
+    rgba(147, 51, 234, 0.9),
+    rgba(239, 68, 68, 0.7)
+  );
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 
+    0 12px 40px rgba(59, 130, 246, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+/* Opción 2: Glass morphism brillante */
+.title-bright-glass {
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.1)
+  );
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Opción 3: Gradiente deportivo (naranja-azul) */
+.title-sports-gradient {
+  background: linear-gradient(135deg,
+    rgba(251, 146, 60, 0.8),   /* Naranja básquet */
+    rgba(59, 130, 246, 0.8),   /* Azul */
+    rgba(16, 185, 129, 0.6)    /* Verde */
+  );
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(251, 146, 60, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Opción 4: Título con sombra de texto */
+.title-text-shadow {
+  text-shadow: 
+    0 0 10px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(0, 0, 0, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 24px 32px;
+}
+
+/* Opción 5: Gradiente como fondo, texto blanco */
+.title-white-with-gradient-bg {
+  background: linear-gradient(
+    45deg,
+    rgba(0, 122, 255, 0.3),
+    rgba(0, 200, 150, 0.3),
+    rgba(255, 107, 107, 0.3),
+    rgba(78, 205, 196, 0.3),
+    rgba(69, 183, 209, 0.3)
+  );
+  background-size: 300% 300%;
+  animation: gradientShift 4s ease infinite;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white !important;
+}
+
+/* Variant for white text with gradient overlay */
+.gradient-text-overlay {
+  position: relative;
+  color: white;
+}
+
+.gradient-text-overlay::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    45deg,
+    #007AFF,
+    #00C896,
+    #FF6B6B,
+    #4ECDC4,
+    #45B7D1
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 4s ease infinite;
+  opacity: 0.8;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* === PERFORMANCE OPTIMIZATIONS === */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.smooth-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.optimized-animation {
+  will-change: transform, opacity;
+  contain: layout style paint;
+  transform: translateZ(0);
 }

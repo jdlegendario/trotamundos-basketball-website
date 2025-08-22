@@ -1,14 +1,38 @@
+'use client';
+
+import { useState } from 'react';
+import { getGalleryImages, getRandomImages, getTrainingImages } from '@/lib/imageMapping';
+import Image from 'next/image';
+
 const Gallery = () => {
-  const fotos = [
-    { id: 1, alt: 'Entrenamiento U15 Femenino', categoria: 'Entrenamientos' },
-    { id: 2, alt: 'Partido Liga Nacional', categoria: 'Partidos' },
-    { id: 3, alt: 'Celebración Campeonato', categoria: 'Celebraciones' },
-    { id: 4, alt: 'Campamento de Verano', categoria: 'Eventos' },
-    { id: 5, alt: 'Equipo Senior Masculino', categoria: 'Equipos' },
-    { id: 6, alt: 'Entrenamiento Técnico', categoria: 'Entrenamientos' },
-    { id: 7, alt: 'Final Liga Juvenil', categoria: 'Partidos' },
-    { id: 8, alt: 'Graduación Jugadores', categoria: 'Eventos' }
-  ]
+  const [filtroActivo, setFiltroActivo] = useState('Todos');
+  
+  // Obtener imágenes organizadas
+  const galeria = getGalleryImages();
+  const entrenamientos = getTrainingImages();
+  
+  // Crear array de fotos con imágenes reales
+  const todasLasFotos = [
+    ...galeria.slice(0, 15).map((img, index) => ({ 
+      id: index + 1, 
+      src: img, 
+      alt: `Momento destacado ${index + 1}`, 
+      categoria: 'Galería' 
+    })),
+    ...entrenamientos.slice(0, 10).map((img, index) => ({ 
+      id: index + 20, 
+      src: img, 
+      alt: `Entrenamiento ${index + 1}`, 
+      categoria: 'Entrenamientos' 
+    }))
+  ];
+
+  // Filtrar fotos según categoría activa
+  const fotosFiltradas = filtroActivo === 'Todos' 
+    ? todasLasFotos 
+    : todasLasFotos.filter(foto => foto.categoria === filtroActivo);
+
+  const categorias = ['Todos', 'Galería', 'Entrenamientos'];
 
   return (
     <section id="galeria" className="py-20 bg-gray-50">
@@ -24,11 +48,12 @@ const Gallery = () => {
 
         {/* Filtros */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {['Todos', 'Entrenamientos', 'Partidos', 'Eventos', 'Equipos', 'Celebraciones'].map((categoria) => (
+          {categorias.map((categoria) => (
             <button
               key={categoria}
+              onClick={() => setFiltroActivo(categoria)}
               className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
-                categoria === 'Todos'
+                categoria === filtroActivo
                   ? 'bg-primary-600 text-white'
                   : 'bg-white text-gray-600 hover:bg-primary-100 hover:text-primary-600'
               }`}
@@ -40,23 +65,24 @@ const Gallery = () => {
 
         {/* Grid de fotos */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {fotos.map((foto, index) => (
+          {fotosFiltradas.map((foto, index) => (
             <div
               key={foto.id}
-              className={`relative overflow-hidden rounded-lg bg-gradient-to-br from-primary-400 to-primary-600 hover:shadow-lg transition-shadow cursor-pointer ${
+              className={`relative overflow-hidden rounded-lg hover:shadow-lg transition-shadow cursor-pointer ${
                 index === 0 ? 'md:col-span-2 md:row-span-2' : ''
               } ${index === 3 ? 'lg:col-span-2' : ''}`}
               style={{
                 minHeight: index === 0 ? '300px' : index === 3 ? '200px' : '200px'
               }}
             >
-              {/* Placeholder con gradiente */}
-              <div className="absolute inset-0 flex items-center justify-center text-white">
-                <div className="text-center">
-                  <div className="text-4xl mb-2">🏀</div>
-                  <div className="text-sm font-medium opacity-90">{foto.categoria}</div>
-                </div>
-              </div>
+              {/* Imagen real */}
+              <Image
+                src={foto.src}
+                alt={foto.alt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              />
               
               {/* Overlay con información */}
               <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity flex items-end">

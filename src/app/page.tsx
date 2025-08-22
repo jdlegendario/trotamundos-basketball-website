@@ -7,6 +7,7 @@ import Teams from '@/components/Teams'
 import Gallery from '@/components/Gallery'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
+import AnimationShowcase from '@/components/AnimationShowcase'
 import { getSchemaOrgData } from '@/lib/seo'
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
         <Header />
         <Hero />
         <About />
+        <AnimationShowcase />
         <News />
         <Events />
         <Teams />
